@@ -1,3 +1,32 @@
 Modellizzare la struttura di una tabella per memorizzare tutti i dati
 riguardanti delle auto usate messe in vendita da un concessionario.
 Scrivete la struttura della tabella "auto" con le varie proprietà, tipi di dato e attributi in un file .txt e pushatelo sulla vostra repo. Aiutatevi con le slides per scegliere le giuste caratteristiche.
+
+
+
+USED AUTO:
+
+1 - id - INT -  PRIMARY_KEY (NOT_NULL, UNIQUE, AUTO_INCREMENT);
+2 - model - VARCHAR(30) - NOT_NULL;
+3 - brand - VARCHAR(30) - NOT_NULL;
+4 - type - VARCHAR(50) - NULL;
+5 - kms - MEDIUMINT - NOT-NULL;
+6 - price - MEDIUMINT - NULL;
+7 - registration_date - DATE - NOT_NULL;
+8 - engine_type - CHAR(20) - NULL; -- sigle: (BEN,DIE, GPL, MET, IBE, IDI,IPB[ibrido plug-in benzina], IPD [ibrido plug-in diesel]) --
+9 - horsepower - SMALLINT - NOT_NULL;
+10 - kw_power - SMALLINT - NOT_NULL;
+11- gearbox - CHAR(3) - NOT_NULL; -- sigle: (AUT, MAN, SEM) --
+12- emissions_class - CHAR(2) - NOT_NULL; -- Ho inserito 2 per quando gli (Euro 5/Euro 6) andranno sopra al 9 --
+13- previous_owners - CHAR(2) - NULL; -- potrebbero essere più di 9 --
+14- registration_place - VARCHAR(20) - NULL; 
+15- external_colors - CHAR(10) - NULL; -- (la struttura sarà "colore base : RGB" + "-" + "M" o "O" per metallizzato o opaco o qualsiasi altra tipologia di colore ) --
+16- interior_colors - VARCHAR(10) - NULL; -- Colori standard a stringa -- 
+17- interior_materials - VARCHAR(30) - NULL; 
+18- wheels_number - TINYINT - NOT_NULL DEFAULT("4");
+19- doors_number - TINYINT - NOT_NULL;
+20- seat_snumber - TINYINT - NOT_NULL;
+21- date_last_service - DATE - NULL;
+22 car_traction - CHAR(3) - NOT_NULL; -- (sigle: AWD[integrale]/FWD[anteriore]/RWD[posteriore]) -- 
+23- wheel_traction - TINYINT - NULL;
+24- zero_kms - CHAR(1) - BOOL NOT_NULL;
